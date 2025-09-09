@@ -165,7 +165,9 @@ const KaraokeScreen: React.FC<KaraokeScreenProps> = ({ songDetails, lyrics, onSo
       setTomatoes(prev => prev.filter(t => t.id !== id));
   }, []);
 
-  const activeLineIndex = lyrics.findIndex(line => currentTime >= (line.startTime + lyricsOffset) && currentTime < (line.endTime + lyricsOffset));
+  // Note: use `-lyricsOffset` so that decreasing the offset (e.g. -0.5)
+  // causes a delay in when the lyrics change (startTime - (-0.5) => later).
+  const activeLineIndex = lyrics.findIndex(line => currentTime >= (line.startTime - lyricsOffset) && currentTime < (line.endTime - lyricsOffset));
   const activeLine = activeLineIndex !== -1 ? lyrics[activeLineIndex] : null;
   const futureLine = activeLineIndex < lyrics.length - 1 ? lyrics[activeLineIndex + 1] : null;
   const targetPitch = 50 + Math.sin(currentTime * 1.5) * 30;

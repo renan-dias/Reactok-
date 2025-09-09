@@ -2,14 +2,8 @@ import type { YouTubeVideo } from '../types';
 
 const API_BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
 
-// AVISO: Para sua segurança, é altamente recomendável usar variáveis de ambiente
-// em vez de colocar chaves de API diretamente no código. Esta chave é visível para qualquer pessoa
-// que possa ver o código-fonte do seu aplicativo.
-//
-// A chave abaixo foi inserida conforme sua solicitação.
-// É altamente recomendável que você exclua esta chave do seu Google Cloud Console e gere uma nova
-// que você mantenha em sigilo.
-const API_KEY = "";
+// AVISO: Para sua segurança, use variáveis de ambiente para a chave da API do YouTube.
+const API_KEY = process.env.YOUTUBE_API_KEY || "";
 
 export async function searchVideos(query: string): Promise<YouTubeVideo[]> {
     // Adicionado videoEmbeddable=true e "lyrics" na busca para melhorar a qualidade dos resultados
