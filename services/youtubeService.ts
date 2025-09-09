@@ -9,7 +9,7 @@ const API_BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
 // A chave abaixo foi inserida conforme sua solicitação.
 // É altamente recomendável que você exclua esta chave do seu Google Cloud Console e gere uma nova
 // que você mantenha em sigilo.
-const API_KEY = "AIzaSyDgAG7Nt6haYEpWQZYiXIqf8E1exmJ9JEQ";
+const API_KEY = "";
 
 export async function searchVideos(query: string): Promise<YouTubeVideo[]> {
     // Adicionado videoEmbeddable=true e "lyrics" na busca para melhorar a qualidade dos resultados
