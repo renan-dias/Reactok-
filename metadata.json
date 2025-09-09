@@ -1,0 +1,7 @@
+{
+  "name": "Karaoke Star",
+  "description": "A modern and fun karaoke application that uses AI to fetch lyrics for any song. Sing along to your favorite YouTube videos, get real-time (simulated) pitch feedback, and aim for a 5-star performance!",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
